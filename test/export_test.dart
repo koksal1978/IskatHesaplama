@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -54,10 +53,6 @@ void main() {
       pngBytes = await ExportService.capturePng(boundaryKey);
       if (pngBytes != null) {
         pdfBytes = await ExportService.generatePdfFromImage(pngBytes!);
-        // Görseli doğrulamak için brain dizinine kaydet
-        final artifactFile = File(
-            r'C:\Users\yazil\.gemini\antigravity\brain\813566a3-c027-4722-9e43-9cea1db9d662\rendered_a4_poster.png');
-        await artifactFile.writeAsBytes(pngBytes!);
       }
     });
 
